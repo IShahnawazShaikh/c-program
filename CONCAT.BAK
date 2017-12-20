@@ -1,0 +1,41 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+#include<stdio.h>
+class over
+{
+  char str[50];
+  public:
+  void input();
+  void output();
+  over operator+(over obj)
+  {
+    over temp;
+    strcpy(temp.str,str);
+    strcat(temp.str," ");
+    strcat(temp.str,obj.str);
+    return temp;
+  }
+};
+ void over::input()
+   {
+     gets(str);
+   }
+  void over::output()
+   {
+     cout<<endl<<"concatenated string is:"<<endl;
+     cout<<str;
+   }
+int main()
+  {
+     over obj1,obj2,obj3;
+     clrscr();
+     cout<<endl<<"ENter the first string"<<endl;
+     obj1.input();
+     cout<<endl<<"ENter the second string"<<endl;
+     obj2.input();
+     obj3=obj1.operator+(obj2);
+     obj3.output();
+     getch();
+     return 0;
+  }
