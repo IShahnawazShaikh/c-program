@@ -1,0 +1,29 @@
+//multiple constructor in base class one argument constructor in derive class
+#include<iostream.h>
+#include<conio.h>
+class base
+{
+  public:
+  base()
+  {
+    cout<<"1"<<endl;
+  }
+  base(int x)
+  {
+    cout<<"one arg in base"<<endl<<x;
+  }
+};
+class derive:public base
+{
+  public:
+  derive()
+  {
+    cout<<"2";
+  }
+};
+int main()
+{
+  clrscr();
+  derive obj;
+  getch();
+}
