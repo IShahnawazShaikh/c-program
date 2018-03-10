@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int size,TOS=-1,choice,value,item,i;
+	printf("Enter the size of the stack\n");
+	scanf("%d",&size);
+	int stack[size];
+	while(1)
+	{
+		printf("\n1.PUSH\n2.POP\n3.Details\n3.Exit\n");
+		printf("Enter your choice\n");
+		scanf("%d",&choice);
+		switch(choice)
+		{
+			case 1:
+			if(TOS>=size-1)
+			{
+				printf("\nStack is Overflow\n");
+			}
+		else
+		 {
+			TOS=TOS+1;
+			 printf("Enter the value to be pushed\n");
+			 scanf("%d",&item);
+			 stack[TOS]=item;
+		 }
+		 break;
+		 case 2:
+		  if(TOS<0)
+		  {
+			 printf("Stack is underflow\n");
+		  }
+		 else
+		{
+			 value=stack[TOS];
+			 TOS=TOS-1;
+		}
+		break;
+		case 3:
+		printf("\nValues in the stack are:\n");
+		for(i=0;i<=TOS;i++)
+		{
+			printf("%d\t",stack[i]);
+		}
+		break;
+		case 4:
+		exit(0);
+	  }
+	}
+	return 0;
+}
+
